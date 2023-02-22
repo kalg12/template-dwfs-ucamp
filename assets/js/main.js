@@ -1,53 +1,20 @@
-console.log("Hola 🤖");
-/* ------------------- */
-const curso = {
-  nombre: "UCAMP",
-  tipos: "FullStack",
-  modulos: [
-    { nombre: "css", cursado: true },
-    { nombre: "JavaScript", cursado: true },
-    { nombre: "React", cursado: false },
-  ],
-  saludar: (nombreDePersona) => {
-    console.log(`Hola, mucho gusto ${nombreDePersona}`);
-  },
-};
+console.log("Tema: Clases");
 
-/* Impresión en consola */
-console.log(typeof curso);
-/* Aquí va a imprimir el nombre de la empresa: UCAMP */
-console.log(curso.nombre);
+/* -----Clases------ */
 
-/* Aquí quiero imprimir el nombre JavaScript del objeto que se encuentra en mi array módulos */
-console.log(curso.modulos[1].nombre);
+/* Declarando una clase */
+class Persona {
+  constructor(nombre, apellido) {
+    this.nombre = nombre;
+    this.apellido = apellido;
+  }
+  saludar() {
+    console.log(`El nombre capturado fue: ${this.nombre} ${this.apellido}`);
+  }
+}
 
-/* Vamos a hacer uso del DOM para meter datos en el HTML */
-document.getElementById("dom").innerHTML = `
-<li>${curso.nombre}</li>
-
-<table style="height: 205px;" width="440">
-<tbody>
-<tr>
-<td style="width: 139.328px;">No.</td>
-<td style="width: 139.328px;">Nombre</td>
-<td style="width: 139.344px;">¿Cursado?</td>
-</tr>
-<tr>
-<td style="width: 139.328px;">1</td>
-<td style="width: 139.328px;">${curso.modulos[0].nombre}</td>
-<td style="width: 139.344px;">${curso.modulos[0].cursado}</td>
-</tr>
-<tr>
-<td style="width: 139.328px;">2</td>
-<td style="width: 139.328px;">${curso.modulos[1].nombre}</td>
-<td style="width: 139.344px;">${curso.modulos[1].cursado}</td>
-</tr>
-<tr>
-<td style="width: 139.328px;">3</td>
-<td style="width: 139.328px;">${curso.modulos[2].nombre}</td>
-<td style="width: 139.344px;">${curso.modulos[2].cursado}</td>
-</tr>
-</tbody>
-</table>
-
-`;
+/* Instanciar una clase */
+const persona1 = new Persona("Kevin", "Luciano");
+const persona2 = new Persona("Leo", "Ramírez");
+persona1.saludar();
+persona2.saludar();
